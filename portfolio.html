@@ -1,202 +1,349 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manas Dasari | Tech Consulting Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>Manas Dasari | Experience Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #0f172a;
+      --card: #0b1220;
+      --accent: #7c3aed;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.08);
+      --shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: 'Inter', sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #2c3e50;
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.18), transparent 25%),
+                  radial-gradient(circle at 80% 0%, rgba(14, 165, 233, 0.14), transparent 28%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding-bottom: 4rem;
     }
+
     header {
-      background: #2c3e50;
-      color: white;
-      padding: 2rem;
+      padding: 3.5rem 1.5rem 2.5rem;
       text-align: center;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
-      background: white;
+
+    header h1 {
+      margin: 0 0 0.75rem;
+      font-size: 2.4rem;
+      letter-spacing: -0.02em;
     }
-    h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.5rem;
-      margin-top: 2rem;
+
+    header p {
+      margin: 0.25rem 0;
+      color: var(--muted);
     }
-    ul {
-      padding-left: 1.5rem;
-    }
-    .project, .experience {
-      margin-bottom: 2rem;
-    }
-    .skills span {
-      background: #ecf0f1;
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.55rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted);
       margin: 0.25rem;
-      padding: 0.5rem 0.75rem;
-      display: inline-block;
-      border-radius: 4px;
+      font-size: 0.95rem;
     }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.9rem 1.2rem;
+      margin: 0.75rem 0.35rem 0;
+      border-radius: 12px;
+      background: linear-gradient(120deg, #7c3aed, #2563eb);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+
+    .cta:hover { transform: translateY(-2px); box-shadow: 0 20px 50px rgba(37, 99, 235, 0.25); }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section { margin-top: 2rem; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.9rem;
+    }
+
+    .section-header span {
+      width: 36px;
+      height: 2px;
+      background: linear-gradient(120deg, #7c3aed, #2563eb);
+      border-radius: 999px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, rgba(124, 58, 237, 0.12), rgba(37, 99, 235, 0.05));
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .card:hover::before { opacity: 1; }
+    .card > * { position: relative; }
+
+    h3 { margin: 0 0 0.35rem; letter-spacing: -0.01em; }
+    .meta { color: var(--muted); margin-bottom: 0.75rem; font-size: 0.95rem; }
+    ul { margin: 0; padding-left: 1.1rem; color: #cbd5e1; }
+    li + li { margin-top: 0.45rem; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.65rem;
+      border-radius: 10px;
+      background: rgba(124, 58, 237, 0.16);
+      color: #cbd5e1;
+      font-size: 0.85rem;
+      margin-right: 0.4rem;
+    }
+
+    .pill-group { margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .pill { padding: 0.45rem 0.7rem; border-radius: 12px; background: rgba(255, 255, 255, 0.06); color: var(--muted); border: 1px solid var(--border); font-size: 0.9rem; }
+
     footer {
       text-align: center;
-      padding: 1rem;
-      background: #2c3e50;
-      color: white;
+      padding: 2rem 1rem;
+      color: var(--muted);
     }
-    a {
-      color: #3498db;
-      text-decoration: none;
-    }
-    strong {
-      font-weight: 600;
+
+    @media (max-width: 640px) {
+      header h1 { font-size: 2rem; }
+      .grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <header>
+    <div class="chip">🎓 Informatics + Business & HCI/Design, Indiana University Bloomington</div>
     <h1>Manas Dasari</h1>
-    <p>Major: Informatics | Minor's: Business + HCI/Design | Indiana University Bloomington</p>
-    <p><a href="https://www.linkedin.com/in/manas-dasari-886086213/">LinkedIn</a> | <a href="#">GitHub</a> | <a href="mailto:manadasar@gmail.com">Email</a></p>
+    <p>Tech consultant and analyst translating data, design, and business needs into impactful results.</p>
+    <div>
+      <a class="cta" href="https://www.linkedin.com/in/manas-dasari-886086213/" target="_blank" rel="noopener">LinkedIn →</a>
+      <a class="cta" href="https://github.com/manasdasa" target="_blank" rel="noopener">GitHub →</a>
+      <a class="cta" href="mailto:manadasar@gmail.com">Email →</a>
+    </div>
   </header>
 
   <div class="container">
     <section>
-      <h2>About Me</h2>
-      <p>
-        I'm <strong>Manas</strong>, a junior at <strong>Indiana University Bloomington</strong> pursuing a <strong>B.S. in Informatics</strong> with minors in <strong>Business</strong> and <strong>Human-Computer Interaction/Design</strong>. 
-        I specialize in transforming complex data and user needs into actionable insights and scalable solutions. 
-        My approach blends <strong>technical knowledge</strong> with <strong>consulting experience</strong>, enabling me to support organizations in making <strong>data-informed decisions</strong>, improving <strong>user experiences</strong>, and solving <strong>business challenges</strong>. 
-        I’ve led projects in <strong>inventory optimization</strong>, <strong>fraud prevention</strong>, <strong>community outreach platforms</strong>, and <strong>digital product design</strong>, consistently delivering high-impact outcomes in <strong>team-based environments</strong>.
-      </p>
-    </section>
-
-    <section>
-      <h2>Consulting Projects</h2>
-      <div class="project">
-        <h3>ERPsim Sustainability Simulation – Tournament of Champions Finalist</h3>
-        <p><strong>Role:</strong> Stock Manager | <strong>Tools:</strong> Tableau, Excel, ERPsim</p>
-        <ul>
-          <li><strong>Led inventory and logistics strategy</strong> in a competitive ERPsim sustainability simulation, placing 3rd among top-performing peer teams</li>
-          <li>Built <strong>real-time Tableau dashboards</strong> to track stock levels, optimize shipment schedules, reduce emissions, and monitor sustainability KPIs</li>
-          <li>Applied <strong>financial modeling</strong> and benchmarking to raise simulated company valuation to <strong>$2 million</strong></li>
-          <li>Presented <strong>strategic recommendations</strong> to a panel of <strong>EY Technology Consultants</strong> under time-constrained, high-stakes simulation conditions</li>
-        </ul>
-      </div>
-
-      <div class="project">
-        <h3>Monroe County Fairgrounds Website Redesign</h3>
-        <p><strong>Role:</strong> Technology Consultant | <strong>Focus:</strong> Community UX Research & Strategy</p>
-        <ul>
-          <li><strong>Led a consulting project</strong> to evaluate and improve digital touchpoints for local government event/rental site</li>
-          <li>Conducted <strong>user research</strong>, <strong>pain point analysis</strong>, and <strong>workflow mapping</strong> for accessibility and efficiency</li>
-          <li>Aligned <strong>redesign recommendations</strong> with client goals for inclusion, usability, and public engagement</li>
-        </ul>
-      </div>
-
-      <div class="project">
-        <h3>Luddy Consulting Association x MSIS Case Competition</h3>
-        <p><strong>Role:</strong> Tech Consultant | <strong>Focus:</strong> Product Innovation with AR/VR</p>
-        <ul>
-          <li>Proposed solutions for Snapchat to integrate <strong>AR/VR experiences</strong> into its platform</li>
-          <li>Applied <strong>business modeling</strong> and <strong>design thinking</strong> to balance innovation with user adoption goals</li>
-        </ul>
+      <div class="section-header"><span></span>About</div>
+      <div class="card">
+        <p>
+          I focus on simplifying complex systems and creating clear outcomes across technology consulting, data storytelling, and user-centered design.
+          Recent work includes logistics simulations, public-sector UX research, and product strategy for AR/VR experiences. I thrive in collaborative, high-stakes environments and deliver with empathy, structure, and speed.
+        </p>
+        <div class="pill-group">
+          <span class="pill">Inventory optimization</span>
+          <span class="pill">UX research</span>
+          <span class="pill">Data visualization</span>
+          <span class="pill">Product strategy</span>
+        </div>
       </div>
     </section>
 
     <section>
-      <h2>Software Projects</h2>
-      <div class="project">
-        <h3>Bill’s Breakfast – Full-Stack Ordering System</h3>
-        <p><strong>Role:</strong> Web Developer | <strong>Tools:</strong> Flask, Python, MariaDB, HTML/CSS</p>
-        <ul>
-          <li><strong>Migrated backend data</strong> from flat CSV files to MariaDB, increasing data integrity and system scalability</li>
-          <li>Built a <strong>production-like checkout system</strong> with risk control and real-time logic</li>
-        </ul>
-      </div>
+      <div class="section-header"><span></span>Consulting Projects (Completed)</div>
+      <div class="grid">
+        <div class="card">
+          <h3>ERPsim Sustainability Simulation</h3>
+          <div class="meta">Tournament of Champions Finalist · Spring 2024</div>
+          <div class="badge">Stock Manager</div><div class="badge">Tableau · Excel · ERPsim</div>
+          <ul>
+            <li>Drove inventory and logistics strategy that placed 3rd among top-performing peer teams.</li>
+            <li>Built real-time Tableau dashboards to monitor stock levels, shipment schedules, and sustainability KPIs.</li>
+            <li>Improved simulated valuation to $2M through financial modeling and benchmark analysis.</li>
+            <li>Delivered executive-ready recommendations to EY Technology Consultants under timed conditions.</li>
+          </ul>
+        </div>
 
-      <div class="project">
-        <h3>Python Encryption Tool for Fraud Detection</h3>
-        <p><strong>Role:</strong> Developer | <strong>Tools:</strong> Python</p>
-        <ul>
-          <li>Created a custom <strong>encryption/decryption tool</strong> for simulating fraud prevention frameworks</li>
-          <li>Tested data resilience under varied inputs, focusing on <strong>secure integration</strong> and <strong>modular design</strong></li>
-        </ul>
-      </div>
-    </section>
+        <div class="card">
+          <h3>Monroe County Fairgrounds Redesign</h3>
+          <div class="meta">Community UX Research & Strategy · Fall 2023</div>
+          <div class="badge">Technology Consultant</div><div class="badge">Accessibility · Journey Mapping</div>
+          <ul>
+            <li>Evaluated digital touchpoints for local government event and rental workflows.</li>
+            <li>Conducted user research, pain-point analysis, and workflow mapping for accessibility and efficiency.</li>
+            <li>Aligned redesign recommendations with inclusivity, usability, and public engagement goals.</li>
+          </ul>
+        </div>
 
-    <section>
-      <h2>Professional Experience</h2>
-      <div class="experience">
-        <h3>Undergraduate Mentor – Introduction to Informatics</h3>
-        <p><strong>Indiana University | Aug 2024 – Present</strong></p>
-        <ul>
-          <li><strong>Mentored 40+ students</strong> in foundational coding, UI tools (Figma), and personal development</li>
-          <li><strong>Led weekly labs</strong> and review sessions to improve student success and retention in tech courses</li>
-        </ul>
-      </div>
-
-      <div class="experience">
-        <h3>Teaching Assistant Intern – EDUC-X158: Culture of College</h3>
-        <p><strong>Indiana University | Jan 2025 – May 2025</strong></p>
-        <ul>
-          <li>Supported students on <strong>academic probation</strong> in reclaiming good standing through reflection, habit-building, and structured planning</li>
-          <li><strong>Facilitated workshops</strong> on time management, organization, and motivation in a peer-led environment</li>
-          <li>Built a <strong>supportive community</strong> focused on self-awareness, growth, and academic success for a class of up to 19 students</li>
-        </ul>
-      </div>
-
-      <div class="experience">
-        <h3>Sales Associate – Hollister</h3>
-        <p><strong>Summer 2024 | Indianapolis, IN</strong></p>
-        <ul>
-          <li>Delivered <strong>customer-first service</strong> and optimized in-store sales by aligning product fit with user needs</li>
-          <li>Handled <strong>inventory and operations</strong>, gaining experience in <strong>client-facing, fast-paced environments</strong></li>
-        </ul>
+        <div class="card">
+          <h3>Luddy Consulting Association x MSIS Case</h3>
+          <div class="meta">Product Innovation with AR/VR · 2023</div>
+          <div class="badge">Tech Consultant</div><div class="badge">Design Thinking</div>
+          <ul>
+            <li>Proposed AR/VR features for Snapchat to balance innovation with adoption and safety.</li>
+            <li>Used business modeling to validate feasibility and value for new immersive experiences.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <section>
-      <h2>Leadership & Campus Involvement</h2>
-      <ul>
-        <li><strong>Director of Internal Relations</strong> – charity: water at IU (2023–Present): Raised <strong>$20K+</strong> for clean water through strategic fundraising campaigns</li>
-        <li><strong>Congressman</strong> – IU Student Government (2023): Helped allocate <strong>$200K</strong> in funding and passed legislation supporting student needs</li>
-        <li><strong>Member</strong> – Luddy Consulting Association: Participated in tech case competitions and consulting workshops</li>
-        <li><strong>Runner</strong> – IU Run Club: Active member in fitness and community wellness efforts</li>
-      </ul>
+      <div class="section-header"><span></span>Software Projects (Completed)</div>
+      <div class="grid">
+        <div class="card">
+          <h3>Bill’s Breakfast Ordering System</h3>
+          <div class="meta">Full-Stack Web · 2024</div>
+          <div class="badge">Flask · MariaDB</div><div class="badge">Python</div>
+          <ul>
+            <li>Migrated backend data from CSV files to MariaDB to increase integrity and scalability.</li>
+            <li>Built a production-style checkout flow with real-time business logic and risk controls.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Python Encryption Tool</h3>
+          <div class="meta">Fraud Prevention Simulation · 2023</div>
+          <div class="badge">Security</div><div class="badge">Python</div>
+          <ul>
+            <li>Developed a modular encryption/decryption toolkit for fraud detection scenarios.</li>
+            <li>Stress-tested data resilience across varied inputs to validate secure integrations.</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section>
-      <h2>Skills & Tools</h2>
-      <div class="skills">
-        <span>Python</span>
-        <span>Flask</span>
-        <span>SQL</span>
-        <span>MariaDB</span>
-        <span>Tableau</span>
-        <span>Figma</span>
-        <span>Excel</span>
-        <span>HTML/CSS</span>
-        <span>Git</span>
-        <span>SAP</span>
-        <span>Data Analysis</span>
-        <span>Business Analytics</span>
-        <span>Project Management</span>
-        <span>UX Research</span>
-        <span>Public Speaking</span>
-        <span>Team Leadership</span>
+      <div class="section-header"><span></span>Professional Experience (Past)</div>
+      <div class="grid">
+        <div class="card">
+          <h3>Undergraduate Mentor, Introduction to Informatics</h3>
+          <div class="meta">Indiana University · Aug 2024 – Dec 2024</div>
+          <ul>
+            <li>Mentored 40+ students on foundational coding, UI tools, and career development.</li>
+            <li>Led weekly labs and review sessions that improved success and retention in tech courses.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Teaching Assistant Intern, EDUC-X158</h3>
+          <div class="meta">Indiana University · Jan 2025 – May 2025</div>
+          <ul>
+            <li>Coached students on academic probation through reflection, habit-building, and structured planning.</li>
+            <li>Facilitated workshops on time management, organization, and motivation in a peer-led setting.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Sales Associate, Hollister</h3>
+          <div class="meta">Indianapolis, IN · Summer 2024</div>
+          <ul>
+            <li>Delivered customer-first service and boosted sales by aligning product fit with user needs.</li>
+            <li>Managed inventory and store operations in a fast-paced retail environment.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header"><span></span>Leadership & Involvement (Past)</div>
+      <div class="grid">
+        <div class="card">
+          <h3>Director of Internal Relations, charity: water at IU</h3>
+          <div class="meta">2023 – 2024</div>
+          <ul>
+            <li>Raised over $20K for clean water through cross-functional fundraising campaigns.</li>
+            <li>Built partner outreach processes and streamlined volunteer coordination.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Congressman, IU Student Government</h3>
+          <div class="meta">2023</div>
+          <ul>
+            <li>Helped allocate $200K in funding and passed legislation supporting student needs.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Member, Luddy Consulting Association & IU Run Club</h3>
+          <div class="meta">2023 – 2024</div>
+          <ul>
+            <li>Participated in tech case competitions, consulting workshops, and community wellness events.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header"><span></span>Skills & Tools</div>
+      <div class="card">
+        <div class="pill-group">
+          <span class="pill">Python</span>
+          <span class="pill">Flask</span>
+          <span class="pill">SQL</span>
+          <span class="pill">MariaDB</span>
+          <span class="pill">Tableau</span>
+          <span class="pill">Figma</span>
+          <span class="pill">Excel</span>
+          <span class="pill">HTML/CSS</span>
+          <span class="pill">Git</span>
+          <span class="pill">SAP</span>
+          <span class="pill">Data Analysis</span>
+          <span class="pill">Business Analytics</span>
+          <span class="pill">Project Management</span>
+          <span class="pill">UX Research</span>
+          <span class="pill">Public Speaking</span>
+          <span class="pill">Team Leadership</span>
+        </div>
       </div>
     </section>
   </div>
 
   <footer>
-    <p>📍 Evanston/Chicago Area | 📧 manadas@iu.edu | Let’s Connect!</p>
+    <p>📍 Evanston/Chicago Area · 📧 manadas@iu.edu · Past work highlights above</p>
   </footer>
 </body>
 </html>
