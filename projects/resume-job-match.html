@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resume to Job Match AI — an NLP pipeline that matches resumes to job listings using semantic similarity.">
+  <title>Resume → Job Match AI — Manas Dasari</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- ── NAVBAR ─────────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-dot"></span>
+        Manas Dasari
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../skills.html">Skills</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../resume.html">Resume</a></li>
+        <li><a href="../contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div class="nav-mobile">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html">Projects</a></li>
+      <li><a href="../skills.html">Skills</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../resume.html">Resume</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ── PROJECT HERO ───────────────────────────────────────── -->
+  <div class="project-detail-hero">
+    <div class="container">
+      <div class="project-breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="../projects.html">Projects</a>
+        <span class="sep">/</span>
+        <span style="color: var(--text);">Resume → Job Match AI</span>
+      </div>
+
+      <div class="tag-group" style="margin-bottom: 1rem;">
+        <span class="tag-cyan">AI/ML</span>
+        <span class="tag">Python</span>
+        <span class="tag">NLP</span>
+      </div>
+
+      <h1 class="project-detail-title">Resume → Job Match AI</h1>
+
+      <p style="font-size: 1.1rem; color: var(--muted); max-width: 600px; line-height: 1.7; margin-bottom: 1.5rem;">
+        An end-to-end AI pipeline that extracts skills from a resume PDF, generates semantic
+        embeddings, and ranks job listings by similarity — automating the job search process.
+      </p>
+
+      <div class="project-detail-meta">
+        <div class="project-detail-meta-item">
+          <span>📅</span>
+          <span>2025</span>
+        </div>
+        <div class="project-detail-meta-item">
+          <span>🏷️</span>
+          <span>Personal Project</span>
+        </div>
+        <div class="project-detail-meta-item">
+          <span>💻</span>
+          <span>Python, NLP, Embeddings</span>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="https://github.com/manasdasa" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          View on GitHub
+        </a>
+        <a href="../projects.html" class="btn btn-secondary">← All Projects</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MAIN CONTENT ────────────────────────────────────────── -->
+  <div class="container" style="padding-bottom: 6rem;">
+    <div class="detail-grid">
+
+      <!-- Main body -->
+      <div>
+
+        <!-- Problem -->
+        <div class="detail-section fade-in">
+          <h3>The Problem</h3>
+          <p>
+            Job searching is broken. Candidates spend hours manually reading job descriptions,
+            trying to figure out if their skills match. Resume keyword scanning by ATS systems
+            is noisy and misses semantic relationships between skills.
+          </p>
+          <p style="margin-top: 0.85rem;">
+            The goal: build an AI-powered tool that reads a resume, understands its skill profile
+            at a semantic level, and automatically surfaces the most relevant job listings —
+            ranked by actual fit, not keyword overlap.
+          </p>
+        </div>
+
+        <!-- Solution -->
+        <div class="detail-section fade-in">
+          <h3>The Solution</h3>
+          <p>
+            A Python pipeline with four distinct stages: document parsing, NLP skill extraction,
+            semantic embedding generation, and cosine similarity ranking. The result is a
+            ranked list of job listings with match scores.
+          </p>
+          <p style="margin-top: 0.85rem;">
+            The key insight is representing both the resume and job descriptions as dense vectors
+            in the same embedding space — then finding which jobs are "closest" to the resume
+            profile geometrically.
+          </p>
+        </div>
+
+        <!-- Demo placeholder -->
+        <div class="detail-section fade-in">
+          <h3>Screenshots / Demo</h3>
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 3rem; text-align: center; margin-top: 0.5rem;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🖼️</div>
+            <p style="color: var(--dim); font-size: 0.88rem; font-family: var(--font-mono);">
+              Screenshots &amp; demo video coming soon
+            </p>
+          </div>
+        </div>
+
+        <!-- Architecture pipeline -->
+        <div class="detail-section fade-in">
+          <h3>System Architecture</h3>
+          <p style="margin-bottom: 1.25rem;">
+            The pipeline is fully modular — each stage is a separate Python module with a clean interface,
+            making it easy to swap components (e.g., replace the embedding model with a newer one).
+          </p>
+
+          <div class="pipeline">
+
+            <div class="pipeline-step">
+              <div class="pipeline-node highlight">📄 Resume PDF</div>
+            </div>
+            <div class="pipeline-connector">
+              <div class="pipe-line"></div>
+              <span style="font-size: 0.7rem; color: var(--dim); font-family: var(--font-mono);">PyPDF2</span>
+              <div class="pipe-line"></div>
+            </div>
+
+            <div class="pipeline-step">
+              <div class="pipeline-node">Text Extraction</div>
+            </div>
+            <div class="pipeline-connector">
+              <div class="pipe-line"></div>
+              <span style="font-size: 0.7rem; color: var(--dim); font-family: var(--font-mono);">spaCy / regex</span>
+              <div class="pipe-line"></div>
+            </div>
+
+            <div class="pipeline-step">
+              <div class="pipeline-node">Skill Detection &amp; Normalization</div>
+            </div>
+            <div class="pipeline-connector">
+              <div class="pipe-line"></div>
+              <span style="font-size: 0.7rem; color: var(--dim); font-family: var(--font-mono);">sentence-transformers</span>
+              <div class="pipe-line"></div>
+            </div>
+
+            <div class="pipeline-step">
+              <div class="pipeline-node">Semantic Embedding Model</div>
+            </div>
+            <div class="pipeline-connector">
+              <div class="pipe-line"></div>
+              <span style="font-size: 0.7rem; color: var(--dim); font-family: var(--font-mono);">scikit-learn</span>
+              <div class="pipe-line"></div>
+            </div>
+
+            <div class="pipeline-step">
+              <div class="pipeline-node">Cosine Similarity Scoring</div>
+            </div>
+            <div class="pipeline-connector">
+              <div class="pipe-line"></div>
+              <div class="pipe-line"></div>
+            </div>
+
+            <div class="pipeline-step">
+              <div class="pipeline-node highlight">✅ Ranked Job Recommendations</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Technical Details -->
+        <div class="detail-section fade-in">
+          <h3>Technical Highlights</h3>
+          <div style="display: flex; flex-direction: column; gap: 0.85rem; margin-top: 0.5rem;">
+            <div style="display: flex; gap: 1rem; padding: 1rem 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);">
+              <span style="font-size: 1.2rem; flex-shrink: 0;">🔤</span>
+              <div>
+                <div style="font-size: 0.88rem; font-weight: 600; margin-bottom: 0.2rem;">PDF Text Extraction</div>
+                <div style="font-size: 0.83rem; color: var(--muted);">Used PyPDF2 to extract raw text from multi-page resume PDFs, handling various PDF encodings and formats robustly.</div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem; padding: 1rem 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);">
+              <span style="font-size: 1.2rem; flex-shrink: 0;">🧠</span>
+              <div>
+                <div style="font-size: 0.88rem; font-weight: 600; margin-bottom: 0.2rem;">NLP Skill Extraction</div>
+                <div style="font-size: 0.83rem; color: var(--muted);">Combined named entity recognition and a curated skills ontology to detect technical and soft skills, normalizing synonyms (e.g., "ML" → "Machine Learning").</div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem; padding: 1rem 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);">
+              <span style="font-size: 1.2rem; flex-shrink: 0;">📐</span>
+              <div>
+                <div style="font-size: 0.88rem; font-weight: 600; margin-bottom: 0.2rem;">Semantic Embeddings</div>
+                <div style="font-size: 0.83rem; color: var(--muted);">Generated dense 768-dimensional vectors using sentence-transformers (all-MiniLM-L6-v2), capturing semantic meaning rather than surface keywords.</div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem; padding: 1rem 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);">
+              <span style="font-size: 1.2rem; flex-shrink: 0;">📊</span>
+              <div>
+                <div style="font-size: 0.88rem; font-weight: 600; margin-bottom: 0.2rem;">Similarity Ranking</div>
+                <div style="font-size: 0.83rem; color: var(--muted);">Computed cosine similarity between the resume vector and each job listing vector, returning a scored ranked list with confidence percentages.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <div class="detail-sidebar">
+
+        <div class="card">
+          <h4>Tech Stack</h4>
+          <div class="tag-group">
+            <span class="tag">Python 3.11</span>
+            <span class="tag">PyPDF2</span>
+            <span class="tag">spaCy</span>
+            <span class="tag">sentence-transformers</span>
+            <span class="tag">scikit-learn</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Pandas</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h4>Links</h4>
+          <a href="https://github.com/manasdasa" class="btn btn-primary" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            View on GitHub
+          </a>
+          <a href="#" class="btn btn-secondary" style="opacity: 0.5; cursor: default; margin-top: 0.5rem;">
+            Live Demo (coming soon)
+          </a>
+        </div>
+
+        <div class="card">
+          <h4>Project Type</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li style="font-size: 0.87rem; color: var(--muted); display: flex; gap: 0.5rem;">
+              <span style="color: var(--cyan);">▸</span> Personal Project
+            </li>
+            <li style="font-size: 0.87rem; color: var(--muted); display: flex; gap: 0.5rem;">
+              <span style="color: var(--cyan);">▸</span> End-to-End AI Pipeline
+            </li>
+            <li style="font-size: 0.87rem; color: var(--muted); display: flex; gap: 0.5rem;">
+              <span style="color: var(--cyan);">▸</span> NLP / Semantic Search
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>Other Projects</h4>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <a href="travel-booking-ai.html" style="font-size: 0.85rem; color: var(--muted); display: flex; gap: 0.5rem; align-items: center; padding: 0.5rem 0.6rem; border-radius: var(--radius-sm); transition: background var(--transition);" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background=''">
+              <span>✈️</span> Travel Booking AI
+            </a>
+            <a href="marathonhub.html" style="font-size: 0.85rem; color: var(--muted); display: flex; gap: 0.5rem; align-items: center; padding: 0.5rem 0.6rem; border-radius: var(--radius-sm); transition: background var(--transition);" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background=''">
+              <span>🏃</span> MarathonHub Capstone
+            </a>
+            <a href="erpsim.html" style="font-size: 0.85rem; color: var(--muted); display: flex; gap: 0.5rem; align-items: center; padding: 0.5rem 0.6rem; border-radius: var(--radius-sm); transition: background var(--transition);" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background=''">
+              <span>📊</span> ERPsim Simulation
+            </a>
+            <a href="monroe-county.html" style="font-size: 0.85rem; color: var(--muted); display: flex; gap: 0.5rem; align-items: center; padding: 0.5rem 0.6rem; border-radius: var(--radius-sm); transition: background var(--transition);" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background=''">
+              <span>🏛️</span> Monroe County Redesign
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../skills.html">Skills</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../resume.html">Resume</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-copy">
+        &copy; 2025 Manas Dasari &nbsp;·&nbsp; Built with HTML, CSS &amp; JS
+      </p>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
