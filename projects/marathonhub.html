@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MarathonHub — a full-stack capstone web platform for marathon runners.">
-  <title>MarathonHub Capstone — Manas Dasari</title>
+  <meta name="description" content="MarathonHub — a data-driven information system for Indiana University Dance Marathon (IUDM) to streamline real-time fundraising tracking.">
+  <title>MarathonHub — IUDM Fundraising Platform | Manas Dasari</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -47,17 +47,19 @@
       <div class="tag-group" style="margin-bottom:1rem;">
         <span class="tag-cyan">Full Stack</span>
         <span class="tag">Flask</span>
-        <span class="tag">SQL</span>
+        <span class="tag">MariaDB</span>
+        <span class="tag">UX Research</span>
       </div>
-      <h1 class="project-detail-title">MarathonHub Capstone</h1>
-      <p style="font-size:1.1rem;color:var(--muted);max-width:600px;line-height:1.7;margin-bottom:1.5rem;">
-        A full-stack web platform built as a capstone project for marathon runners —
-        event discovery, race registration, training plan tracking, and community features.
+      <h1 class="project-detail-title">MarathonHub</h1>
+      <p style="font-size:1.1rem;color:var(--muted);max-width:640px;line-height:1.7;margin-bottom:1.5rem;">
+        A data-driven information system for Indiana University Dance Marathon (IUDM) that replaces
+        fragmented DonorDrive + Excel workflows with a unified real-time fundraising dashboard —
+        featuring live donation tracking, role-based views, leaderboards, and automated notifications.
       </p>
       <div class="project-detail-meta">
-        <div class="project-detail-meta-item"><span>📅</span><span>2024–2025</span></div>
-        <div class="project-detail-meta-item"><span>🏷️</span><span>Capstone Project</span></div>
-        <div class="project-detail-meta-item"><span>💻</span><span>Flask, MariaDB, JavaScript</span></div>
+        <div class="project-detail-meta-item"><span>📅</span><span>2025–2026</span></div>
+        <div class="project-detail-meta-item"><span>🏷️</span><span>Informatics Capstone</span></div>
+        <div class="project-detail-meta-item"><span>💻</span><span>Flask · MariaDB · JavaScript</span></div>
       </div>
       <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
         <a href="https://github.com/manasdasa" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
@@ -73,18 +75,26 @@
         <div class="detail-section fade-in">
           <h3>The Problem</h3>
           <p>
-            Marathon runners lack a unified platform that combines event discovery, registration,
-            training plan management, and community connection in one place. Existing tools are
-            fragmented across multiple apps and websites.
+            Indiana University Dance Marathon's executive board had no single source of truth for
+            fundraising. Tracking donations required constant context-switching between DonorDrive
+            and manually maintained Excel spreadsheets — a fragmented workflow prone to errors,
+            delays, and blind spots during high-stakes push day events. There was no way to view
+            committee-level progress, send milestone alerts, or give participants meaningful
+            visibility into their own fundraising status.
           </p>
         </div>
 
         <div class="detail-section fade-in">
           <h3>The Solution</h3>
           <p>
-            MarathonHub is a full-stack CRUD web application that provides a single destination
-            for the marathon community. Users can browse and register for races, track training
-            progress, and connect with fellow runners.
+            MarathonHub is a unified fundraising information system purpose-built for IUDM. It
+            pulls live donation data into a single dashboard, replacing the DonorDrive + spreadsheet
+            workflow entirely. The platform surfaces real-time totals, team and individual
+            leaderboards, committee goal tracking, and automated push day notifications — all
+            through role-specific views tailored to exec board members, committee heads, general
+            participants, and donors. The system was designed through semi-structured interviews
+            with IUDM Executive Board members and participant surveys to ensure it matched actual
+            workflows.
           </p>
         </div>
 
@@ -95,11 +105,11 @@
             <div class="pipeline-connector"><div class="pipe-line"></div><span style="font-size:0.7rem;color:var(--dim);font-family:var(--font-mono)">HTTP Requests</span><div class="pipe-line"></div></div>
             <div class="pipeline-step"><div class="pipeline-node">Flask (Python Web Server)</div></div>
             <div class="pipeline-connector"><div class="pipe-line"></div><span style="font-size:0.7rem;color:var(--dim);font-family:var(--font-mono)">ORM Queries</span><div class="pipe-line"></div></div>
-            <div class="pipeline-step"><div class="pipeline-node">Business Logic Layer</div></div>
+            <div class="pipeline-step"><div class="pipeline-node">Role-Based Business Logic</div></div>
             <div class="pipeline-connector"><div class="pipe-line"></div><span style="font-size:0.7rem;color:var(--dim);font-family:var(--font-mono)">SQL</span><div class="pipe-line"></div></div>
             <div class="pipeline-step"><div class="pipeline-node">MariaDB Database</div></div>
             <div class="pipeline-connector"><div class="pipe-line"></div><div class="pipe-line"></div></div>
-            <div class="pipeline-step"><div class="pipeline-node highlight">✅ Events, Users, Training Data</div></div>
+            <div class="pipeline-step"><div class="pipeline-node highlight">✅ Participants · Donors · Committees · Events · Donations</div></div>
           </div>
         </div>
 
@@ -107,18 +117,45 @@
           <h3>Key Features</h3>
           <div style="display:flex;flex-direction:column;gap:0.85rem;margin-top:0.5rem;">
             <div style="display:flex;gap:1rem;padding:1rem 1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);">
-              <span style="font-size:1.2rem;flex-shrink:0">🏁</span>
-              <div><div style="font-size:0.88rem;font-weight:600;margin-bottom:0.2rem;">Race Discovery &amp; Registration</div><div style="font-size:0.83rem;color:var(--muted)">Browse upcoming marathon events by location, distance, and date. Register with a single click and manage your race calendar.</div></div>
+              <span style="font-size:1.2rem;flex-shrink:0">📊</span>
+              <div><div style="font-size:0.88rem;font-weight:600;margin-bottom:0.2rem;">Real-Time Donation Tracking</div><div style="font-size:0.83rem;color:var(--muted)">Live master tracker replaces manual Excel sheets with up-to-the-minute donation totals across individuals and committees.</div></div>
             </div>
             <div style="display:flex;gap:1rem;padding:1rem 1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);">
-              <span style="font-size:1.2rem;flex-shrink:0">📋</span>
-              <div><div style="font-size:0.88rem;font-weight:600;margin-bottom:0.2rem;">Training Plan Tracker</div><div style="font-size:0.83rem;color:var(--muted)">Log weekly mileage, workouts, and personal bests. Visualize progress toward race goals with built-in charts.</div></div>
+              <span style="font-size:1.2rem;flex-shrink:0">🔐</span>
+              <div><div style="font-size:0.88rem;font-weight:600;margin-bottom:0.2rem;">Role-Based Dashboards</div><div style="font-size:0.83rem;color:var(--muted)">Distinct views for Exec Board, Committee Heads, General Members, and Donors — each surfacing the data most relevant to their role.</div></div>
             </div>
             <div style="display:flex;gap:1rem;padding:1rem 1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);">
-              <span style="font-size:1.2rem;flex-shrink:0">👥</span>
-              <div><div style="font-size:0.88rem;font-weight:600;margin-bottom:0.2rem;">Community Features</div><div style="font-size:0.83rem;color:var(--muted)">Discussion boards for race tips, gear reviews, and training advice. Connect with runners in your area.</div></div>
+              <span style="font-size:1.2rem;flex-shrink:0">🏆</span>
+              <div><div style="font-size:0.88rem;font-weight:600;margin-bottom:0.2rem;">Team &amp; Individual Leaderboards</div><div style="font-size:0.83rem;color:var(--muted)">Live rankings by fundraising totals at both the participant and committee level to drive friendly competition.</div></div>
+            </div>
+            <div style="display:flex;gap:1rem;padding:1rem 1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);">
+              <span style="font-size:1.2rem;flex-shrink:0">🔔</span>
+              <div><div style="font-size:0.88rem;font-weight:600;margin-bottom:0.2rem;">Automated Push Day &amp; Milestone Notifications</div><div style="font-size:0.83rem;color:var(--muted)">System-triggered alerts for push day events and personal/committee fundraising milestones.</div></div>
+            </div>
+            <div style="display:flex;gap:1rem;padding:1rem 1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);">
+              <span style="font-size:1.2rem;flex-shrink:0">🎯</span>
+              <div><div style="font-size:0.88rem;font-weight:600;margin-bottom:0.2rem;">Committee Goal Setting &amp; Progress Visualization</div><div style="font-size:0.83rem;color:var(--muted)">Committee heads can set fundraising targets and track progress toward them with visual indicators.</div></div>
+            </div>
+            <div style="display:flex;gap:1rem;padding:1rem 1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);">
+              <span style="font-size:1.2rem;flex-shrink:0">💳</span>
+              <div><div style="font-size:0.88rem;font-weight:600;margin-bottom:0.2rem;">Donor Search &amp; Direct Donation Flow</div><div style="font-size:0.83rem;color:var(--muted)">Donors can search for participants and donate directly through the platform with a streamlined flow.</div></div>
+            </div>
+            <div style="display:flex;gap:1rem;padding:1rem 1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);">
+              <span style="font-size:1.2rem;flex-shrink:0">🔑</span>
+              <div><div style="font-size:0.88rem;font-weight:600;margin-bottom:0.2rem;">Secure Login &amp; User Registration</div><div style="font-size:0.83rem;color:var(--muted)">Role-aware authentication system supporting registration and login for all participant types.</div></div>
             </div>
           </div>
+        </div>
+
+        <div class="detail-section fade-in">
+          <h3>Research &amp; Design Process</h3>
+          <p>
+            The system was designed using UX research methods grounded in real user needs.
+            Semi-structured interviews with IUDM Executive Board members uncovered the pain points
+            in the existing workflow. Participant surveys validated the features most valuable to
+            general members and donors. The data model was designed around a normalized ERD with
+            core entities: Participants, Donors, Committees, Events, and Donations.
+          </p>
         </div>
 
         <div class="detail-section fade-in">
@@ -142,19 +179,25 @@
             <span class="tag">JavaScript</span>
             <span class="tag">SQL</span>
             <span class="tag">Jinja2</span>
+            <span class="tag">UX Research</span>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Team</h4>
+          <div style="display:flex;flex-direction:column;gap:0.4rem;font-size:0.85rem;color:var(--muted);line-height:1.6;">
+            <span>Manas Dasari and 3 other members</span>
+            <span style="margin-top:0.5rem;font-size:0.8rem;color:var(--dim);">Informatics Capstone 2026<br>Luddy School of Informatics, Computing, and Engineering — Indiana University</span>
           </div>
         </div>
         <div class="card">
           <h4>Links</h4>
           <a href="https://github.com/manasdasa" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
-          <a href="#" class="btn btn-secondary" style="opacity:0.5;cursor:default;margin-top:0.5rem;">Live Demo (coming soon)</a>
         </div>
         <div class="card">
           <h4>Other Projects</h4>
           <div style="display:flex;flex-direction:column;gap:0.5rem;">
             <a href="resume-job-match.html" style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem;padding:0.5rem 0.6rem;border-radius:var(--radius-sm);">🤖 Resume → Job Match AI</a>
             <a href="travel-booking-ai.html" style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem;padding:0.5rem 0.6rem;border-radius:var(--radius-sm);">✈️ Travel Booking AI</a>
-            <a href="erpsim.html" style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem;padding:0.5rem 0.6rem;border-radius:var(--radius-sm);">📊 ERPsim Simulation</a>
             <a href="monroe-county.html" style="font-size:0.85rem;color:var(--muted);display:flex;gap:0.5rem;padding:0.5rem 0.6rem;border-radius:var(--radius-sm);">🏛️ Monroe County Redesign</a>
           </div>
         </div>
